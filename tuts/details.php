@@ -42,6 +42,8 @@ if(isset($_GET['id'])){
         <h4><?php echo htmlspecialchars($user['email']); ?></h4>
         <p> <?php echo date($user['created_at']) ?>  </p>
 
+        <a href="edit.php?id=<?php echo $user['id'] ?>">Edit</a>
+
         <form action="details.php" method="POST">
             <input type="hidden" name="id_to_delete" value="<?php echo $user['id'] ?>">
             <input type="submit" name="delete" value="Delete" class="btn brand z-depth-0">

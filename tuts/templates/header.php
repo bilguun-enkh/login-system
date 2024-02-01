@@ -1,9 +1,10 @@
 <?php
 session_start();
 
+
 $isLoggedIn = isset($_SESSION['email']);
 
-if(isset($_POST['logout'])){
+if (isset($_POST['logout'])) {
     session_unset();
     session_destroy();
     $isLoggedIn = false;
@@ -35,8 +36,11 @@ if(isset($_POST['logout'])){
             <a href="index.php" class="brand-logo grey-text">Login system</a>
             <ul id="nav-mobile" class="right hide-on-small-and-down">
                 <?php if ($isLoggedIn): ?>
-                    <li class="grey-text">Welcome,</li>
-                    <li><form action="login.php" method="POST" class="m-0 p-0" style="padding: 0px 20px; margin: 0px"><input type="submit" name="logout" value="Logout" class="btn brand z-depth-0"></form></li>
+                    <li>
+                        <form action="login.php" method="POST" class="m-0 p-0" style="padding: 0px 20px; margin: 0px">
+                            <input type="submit" name="logout" value="Logout" class="btn brand z-depth-0">
+                        </form>
+                    </li>
                 <?php else: ?>
                     <li><a href="login.php" class="btn brand z-depth-0">Login</a></li>
                     <li><a href="register.php" class="btn brand z-depth-0">Register</a></li>
